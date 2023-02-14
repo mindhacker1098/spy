@@ -70,7 +70,7 @@ if(reqe[i]==req.params.accep){
 if(req.params.feed=="shut"){
 ress[i].send("shut")}
 else{
-    ress[i].send("get")
+    ress[i].send(req.params.feed)
 }
 res.send("done")
 ress.splice(i,1)

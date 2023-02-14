@@ -36,7 +36,7 @@
 <img id="img" src="">
 
         </div>
-        <script src="" async defer></script>
+    
     </body>
 
 <script>
@@ -91,13 +91,33 @@ btn2.onclick=async function(){
 await fetch(`https://spy.onrender.com/accept/${resp[i]}/shut`)}
 
 
+
+let inp=document.createElement("input");
+inp.id=resp[i]
+
+
+
+let btn3=document.createElement("BUTTON");
+btn3.innerHTML="send";
+btn3.onclick=async function(){
+
+
+   
+
+// document.getElementById("he").innerHTML=`${i}`
+await fetch(`https://spy.onrender.com/accept/${resp[i]}/${document.getElementById(resp[i]).value}`)}
+
+
+
+
 let s=document.createElement("SPAN")
 s.innerHTML=resp[i]
 let d=document.createElement("div")
 d.appendChild(s)
 d.appendChild(btn)
 d.appendChild(btn2)
-
+d.appendChild(inp)
+d.appendChild(btn3)
 document.getElementById("damn").appendChild(d)
 
 
